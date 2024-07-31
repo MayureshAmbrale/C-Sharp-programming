@@ -4,35 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program4
+class Addition
 {
-    class Program
+    private int No1, No2;
+    public Addition(int A, int B)
     {
-        public static bool CheckDivisible3and5(int no)
-        {
-            bool bFlag = false;
-            if (no % 3 == 0 && no % 5 ==0)
-            {
-                bFlag = true;
-            }
+        this.No1 = A;
+        this.No2 = B;
+    }
+    public int Add()
+    {
+        int Ans = 0;
+        Ans = No1 + No2;
+        return Ans;
+    }
 
-            return bFlag;
-        }
+}
+namespace Program2
+{
+    internal class Program
+    {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter number :");
-            int No1 = Convert.ToInt32(Console.ReadLine());
-            bool Ret = false;
-            Ret = CheckDivisible3and5(No1);
-            if (Ret == true)
-            {
-                Console.WriteLine("Number is divisible by 3 and 5");
-            }
-            else
-            {
-                Console.WriteLine("Number is divisible by 3 and 5");
-            }
-
+            int Ret = 0;
+            Console.WriteLine("Enter number 1");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter number 2");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            Addition aobj = new Addition(n1, n2);
+            Ret = aobj.Add();
+            Console.WriteLine(Ret);
         }
     }
 }
